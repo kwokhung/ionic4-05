@@ -22,6 +22,7 @@ npm install --save echarts-liquidfill
 npm rebuild node-sass
 
 ionic start ionic4-05 blank --type=angular
+ionic g page "pages/home"
 
 1. Init Repo (VSCode)
 
