@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
+//import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 
 @Component({
   selector: 'app-bluetooth',
@@ -10,7 +10,7 @@ import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 export class BluetoothPage implements OnInit {
 
   devices: Array<any>;
-  
+
   constructor() { }
 
   ngOnInit() {
