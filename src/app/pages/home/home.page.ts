@@ -13,7 +13,7 @@ export class HomePage implements OnInit {
   logs: Array<string> = [];
 
   constructor(public alertCtrl: AlertController, public logger: LoggerService) {
-    this.logger.addLog('Home');
+    this.logger.addLog('Home Page is created.');
   }
 
   ngOnInit() {
@@ -28,13 +28,11 @@ export class HomePage implements OnInit {
   }
 
   async openLogDetails(log) {
-    const alert = await this.alertCtrl.create({
+    (await this.alertCtrl.create({
       header: 'Log Details',
-      message: JSON.stringify(log),
+      message: (typeof log === "string" ? log : JSON.stringify(log)),
       buttons: ['Close']
-    });
-
-    await alert.present();
+    })).present();
   }
 
 }
