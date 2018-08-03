@@ -23,6 +23,7 @@ npm rebuild node-sass
 
 ionic start ionic4-05 blank --type=angular
 ionic g page "pages/home"
+ionic g page "pages/scan"
 ionic g service "services/logger/logger"
 
 1. Init Repo (VSCode)
