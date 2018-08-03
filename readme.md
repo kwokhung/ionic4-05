@@ -21,6 +21,10 @@ npm install --save echarts-liquidfill
 # Rebuild
 npm rebuild node-sass
 
+# barcode scanner
+ionic cordova plugin add phonegap-plugin-barcodescanner
+npm install --save @ionic-native/barcode-scanner
+
 ionic start ionic4-05 blank --type=angular
 ionic g page "pages/home"
 ionic g page "pages/scan"

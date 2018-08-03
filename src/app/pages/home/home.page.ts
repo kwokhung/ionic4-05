@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
   async openLogDetails(log) {
     (await this.alertCtrl.create({
       header: 'Log Details',
-      message: (typeof log === "string" ? log : JSON.stringify(log)),
+      subHeader: (typeof log === "string" ? log : JSON.stringify(log)),
       buttons: ['Close']
     })).present();
   }
