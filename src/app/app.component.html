@@ -11,11 +11,11 @@
           <ion-list-header>
             Application Menu
           </ion-list-header>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+          <ion-menu-toggle auto-hide="false" *ngFor="let menuItem of appMenuItems">
+            <ion-item [routerDirection]="'root'" [routerLink]="[menuItem.url]">
+              <ion-icon slot="start" [name]="menuItem.icon"></ion-icon>
               <ion-label>
-                {{p.title}}
+                {{menuItem.title}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
