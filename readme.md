@@ -32,7 +32,6 @@ npm install --save @ionic-native/bluetooth-serial
 ionic start ionic4-05 blank --type=angular
 ionic g page "pages/home"
 ionic g page "pages/scan"
-ionic g page "pages/bluetooth"
 ionic g service "services/logger/logger"
 
 1. Init Repo (VSCode)
