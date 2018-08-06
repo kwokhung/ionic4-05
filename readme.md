@@ -30,6 +30,7 @@ ionic cordova plugin add cordova-plugin-bluetooth-serial
 npm install --save @ionic-native/bluetooth-serial
 
 ionic start ionic4-05 blank --type=angular
+ionic g component "components/hello"
 ionic g page "pages/home"
 ionic g page "pages/scan"
 ionic g service "services/logger/logger"
