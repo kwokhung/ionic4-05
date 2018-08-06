@@ -18,8 +18,7 @@ export class AppComponent {
 
   appMenuItems: Array<MenuItem> = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Scan', url: '/scan', icon: 'qr-scanner' },
-    { title: 'Bluetooth', url: '/bluetooth', icon: 'bluetooth' }
+    { title: 'Scan', url: '/scan', icon: 'qr-scanner' }
   ];
 
   constructor(
