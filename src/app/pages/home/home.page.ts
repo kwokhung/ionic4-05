@@ -21,9 +21,11 @@ export class HomePage implements OnInit {
   }
 
   getLogs() {
-    this.logger.getLogs().then((data) => {
-      this.logs = data.slice(0);
-      this.logs = this.logs.reverse();
+    this.logger.getLogs().subscribe({
+      next: (data: Array<string>) => {
+        this.logs = data.slice(0);
+        this.logs = this.logs.reverse();
+      }
     });
   }
 

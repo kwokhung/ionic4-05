@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,9 @@ export class LoggerService {
   }
 
   getLogs() {
-    return Promise.resolve(this.logs);
+    return new Observable(observer => {
+      observer.next(this.logs);
+    })
   }
 
 }
