@@ -33,6 +33,7 @@ ionic start ionic4-05 blank --type=angular
 ionic g module "modules/share"
 ionic g component "components/hello"
 ionic g directive "directives/blueColor/blueColor"
+ionic g pipe "pipes/toThePower/toThePower"
 ionic g page "pages/home"
 ionic g page "pages/scan"
 ionic g service "services/logger/logger"
