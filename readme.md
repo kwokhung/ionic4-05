@@ -37,6 +37,7 @@ ionic g pipe "pipes/toThePower/toThePower"
 ionic g guard "guards/simplyPrevent/simplyPrevent"
 ionic g page "pages/home"
 ionic g page "pages/scan"
+ionic g page "pages/chart"
 ionic g service "services/logger/logger"
 
 1. Init Repo (VSCode)
