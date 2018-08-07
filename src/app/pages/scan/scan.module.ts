@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { ScanPage } from './scan.page';
 
-import { HelloComponent } from '../../components/hello/hello.component';
+//import { HelloComponent } from '../../components/hello/hello.component';
+import { ShareModule } from '../../modules/share/share.module';
 
 const routes: Routes = [
   {
@@ -21,8 +22,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ShareModule
   ],
-  declarations: [ScanPage, HelloComponent]
+  declarations: [ScanPage/*, HelloComponent*/]
 })
 export class ScanPageModule { }
