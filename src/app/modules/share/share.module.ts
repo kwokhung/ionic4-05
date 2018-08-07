@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HelloComponent } from '../../components/hello/hello.component';
+import { ChartAComponent } from '../../components/chart-a/chart-a.component';
 import { BlueColorDirective } from '../../directives/blueColor/blue-color.directive';
 import { ToThePowerPipe } from '../../pipes/toThePower/to-the-power.pipe';
 
@@ -10,10 +11,12 @@ import { ToThePowerPipe } from '../../pipes/toThePower/to-the-power.pipe';
     CommonModule
   ],
   declarations: [
-    HelloComponent, BlueColorDirective, ToThePowerPipe
+    HelloComponent, ChartAComponent,
+    BlueColorDirective,
+    ToThePowerPipe
   ],
   exports: [
-    HelloComponent
+    HelloComponent, ChartAComponent
   ]
 })
 export class ShareModule { }

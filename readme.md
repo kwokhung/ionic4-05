@@ -32,6 +32,7 @@ npm install --save @ionic-native/bluetooth-serial
 ionic start ionic4-05 blank --type=angular
 ionic g module "modules/share"
 ionic g component "components/hello"
+ionic g component "components/chartA"
 ionic g directive "directives/blueColor/blueColor"
 ionic g pipe "pipes/toThePower/toThePower"
 ionic g guard "guards/simplyPrevent/simplyPrevent"
