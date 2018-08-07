@@ -9,7 +9,7 @@ export class HelloComponent implements OnInit {
 
   constructor(private element: ElementRef, private renderer: Renderer) {    
     let nativeElement = this.element.nativeElement;
-    renderer.setElementStyle(nativeElement, "color", "blue");
+    renderer.setElementStyle(nativeElement, 'font-style', 'italic');
   }
 
   ngOnInit() {
