@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Renderer, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
 
-  constructor() { }
+  constructor(private element: ElementRef, private renderer: Renderer) {    
+    let nativeElement = this.element.nativeElement;
+    renderer.setElementStyle(nativeElement, "color", "blue");
+  }
 
   ngOnInit() {
   }
