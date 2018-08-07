@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SimplyPreventGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    alert("Please login.");
+    alert("Under construction.");
 
     return false;
   }
