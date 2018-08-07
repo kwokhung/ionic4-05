@@ -8,11 +8,13 @@ import { IonicModule } from '@ionic/angular';
 import { ScanPage } from './scan.page';
 
 import { ShareModule } from '../../modules/share/share.module';
+import { SimplyPreventGuard } from '../../guards/simplyPrevent/simply-prevent.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: ScanPage
+    component: ScanPage,
+    canActivate: [SimplyPreventGuard]
   }
 ];
 
