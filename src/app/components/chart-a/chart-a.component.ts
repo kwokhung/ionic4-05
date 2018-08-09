@@ -22,8 +22,8 @@ export class ChartAComponent implements OnInit {
   }
 
   initChart() {
-    this.renderer.setElementStyle(this.nativeElement, 'width', this.nativeElement.offsetWidth + 'px');
-    this.renderer.setElementStyle(this.nativeElement, 'height', this.nativeElement.offsetWidth * 3 / 4 + 'px');
+    this.setDimension();
+
     this.chartA = ECharts.init(this.nativeElement);
 
     this.optionA = {
@@ -81,9 +81,21 @@ export class ChartAComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.renderer.setElementStyle(this.nativeElement, 'width', this.nativeElement.parentElement.offsetWidth + 'px');
-    this.renderer.setElementStyle(this.nativeElement, 'height', this.nativeElement.parentElement.offsetWidth * 3 / 4 + 'px');
+    this.setDimension();
     this.chartA.resize();
+  }
+
+  private setDimension() {
+    let width = 0;
+
+    if (this.nativeElement.offsetParent) {
+      width = this.nativeElement.offsetParent.scrollWidth - this.nativeElement.offsetLeft * 2;
+    }
+
+    width = (width > 0 ? width : 400);
+
+    this.renderer.setElementStyle(this.nativeElement, 'width', width + 'px');
+    this.renderer.setElementStyle(this.nativeElement, 'height', width * 3 / 4 + 'px');
   }
 
 }
