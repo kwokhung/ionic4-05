@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer, OnInit } from '@angular/core';
+import { Component, ElementRef, Renderer, OnInit, HostListener } from '@angular/core';
 
 import * as ECharts from 'echarts';
 
@@ -9,10 +9,12 @@ import * as ECharts from 'echarts';
 })
 export class ChartAComponent implements OnInit {
 
+  nativeElement: any;
   chartA: ECharts.ECharts;
   optionA: ECharts.EChartOption;
 
   constructor(private element: ElementRef, private renderer: Renderer) {
+    this.nativeElement = this.element.nativeElement;
   }
 
   ngOnInit() {
@@ -20,10 +22,9 @@ export class ChartAComponent implements OnInit {
   }
 
   initChart() {
-    let nativeElement = this.element.nativeElement;
-    this.renderer.setElementStyle(nativeElement, 'width', nativeElement.offsetWidth + 'px');
-    this.renderer.setElementStyle(nativeElement, 'height', nativeElement.offsetWidth * 3 / 4 + 'px');
-    this.chartA = ECharts.init(nativeElement);
+    this.renderer.setElementStyle(this.nativeElement, 'width', this.nativeElement.offsetWidth + 'px');
+    this.renderer.setElementStyle(this.nativeElement, 'height', this.nativeElement.offsetWidth * 3 / 4 + 'px');
+    this.chartA = ECharts.init(this.nativeElement);
 
     this.optionA = {
       backgroundColor: '#2c343c',
@@ -76,7 +77,13 @@ export class ChartAComponent implements OnInit {
     };
 
     this.chartA.setOption(this.optionA);
-    //this.chartA.resize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.renderer.setElementStyle(this.nativeElement, 'width', this.nativeElement.parentElement.offsetWidth + 'px');
+    this.renderer.setElementStyle(this.nativeElement, 'height', this.nativeElement.parentElement.offsetWidth * 3 / 4 + 'px');
+    this.chartA.resize();
   }
 
 }
