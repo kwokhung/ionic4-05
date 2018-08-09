@@ -7,8 +7,8 @@ export class BlueColorDirective {
 
   constructor(public element: ElementRef, public renderer: Renderer) {
     let nativeElement = this.element.nativeElement;
-    renderer.setElementStyle(nativeElement, 'background-color', 'yellow');
-    renderer.setElementStyle(nativeElement, 'color', 'blue');
+    this.renderer.setElementStyle(nativeElement, 'background-color', 'yellow');
+    this.renderer.setElementStyle(nativeElement, 'color', 'blue');
   }
 
 }
