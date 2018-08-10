@@ -94,7 +94,7 @@ export class ChartAComponent implements OnInit {
       width = (width > 0 ? width : this.nativeElement.offsetParent.scrollWidth - 32);
     }
 
-    width = (width > 0 ? width : this.platform.width() - 32);
+    width = (width > 0 && width < this.platform.width() ? width : this.platform.width() - 32);
 
     this.renderer.setElementStyle(this.nativeElement, 'width', width + 'px');
     this.renderer.setElementStyle(this.nativeElement, 'height', width * 3 / 4 + 'px');
