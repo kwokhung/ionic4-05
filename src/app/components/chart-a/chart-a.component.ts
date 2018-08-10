@@ -1,5 +1,5 @@
 import { Component, ElementRef, Renderer, OnInit, HostListener } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { Platform, AlertController } from '@ionic/angular';
 
 import * as ECharts from 'echarts';
 
@@ -14,7 +14,7 @@ export class ChartAComponent implements OnInit {
   chartA: ECharts.ECharts;
   optionA: ECharts.EChartOption;
 
-  constructor(private platform: Platform, private element: ElementRef, private renderer: Renderer) {
+  constructor(private element: ElementRef, private renderer: Renderer, private platform: Platform, private alertCtrl: AlertController) {
     this.nativeElement = this.element.nativeElement;
   }
 

@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SimplyPreventGuard implements CanActivate {
-  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    alert("Under construction.");
+
+  constructor(private alertCtrl: AlertController) { }
+
+  async canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+    (await this.alertCtrl.create({
+      header: 'Attention!',
+      subHeader: 'Under construction.'
+    })).present();
 
     return false;
   }

@@ -19,13 +19,13 @@ export class ScanPage implements OnInit {
     this.barcodeScanner.scan().then(async (barcodeData) => {
       (await this.alertCtrl.create({
         header: 'Scan Results',
-        subHeader: (typeof barcodeData === "string" ? barcodeData : JSON.stringify(barcodeData)),
+        subHeader: (typeof barcodeData === 'string' ? barcodeData : JSON.stringify(barcodeData)),
         buttons: ['Close']
       })).present();
     }, async (err) => {
       (await this.alertCtrl.create({
-        header: "Attention!",
-        subHeader: (typeof err === "string" ? err : JSON.stringify(err))
+        header: 'Attention!',
+        subHeader: (typeof err === 'string' ? err : JSON.stringify(err))
       })).present();
     });
   }*/
