@@ -7,12 +7,14 @@ import { Component, ElementRef, Renderer, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
 
+  nativeElement: any;
+
   constructor(private element: ElementRef, private renderer: Renderer) {    
-    let nativeElement = this.element.nativeElement;
-    this.renderer.setElementStyle(nativeElement, 'font-style', 'italic');
+    this.nativeElement = this.element.nativeElement;
   }
 
   ngOnInit() {
+    this.renderer.setElementStyle(this.nativeElement, 'font-style', 'italic');
   }
 
 }

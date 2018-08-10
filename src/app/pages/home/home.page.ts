@@ -12,11 +12,11 @@ export class HomePage implements OnInit {
 
   logs: Array<string> = [];
 
-  constructor(public alertCtrl: AlertController, public logger: LoggerService) {
-    this.logger.addLog('Home Page is created.');
-  }
+  constructor(public alertCtrl: AlertController, public logger: LoggerService) { }
 
   ngOnInit() {
+    this.logger.addLog('Home Page is created.');
+
     this.getLogs();
   }
 

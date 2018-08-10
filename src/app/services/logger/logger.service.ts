@@ -6,11 +6,9 @@ import { Observable } from 'rxjs';
 })
 export class LoggerService {
 
-  logs: Array<string>;
+  logs: Array<string> = [];
 
-  constructor() {
-    this.logs = [];
-  }
+  constructor() { }
 
   addLog(log: string) {
     this.logs.push(log);
