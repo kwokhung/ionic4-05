@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoggerService {
 
-  logs: Array<string> = [];
+  //logs: Array<string> = [];
+  logs: string[] = [];
 
   constructor() { }
 
@@ -14,10 +15,13 @@ export class LoggerService {
     this.logs.push(log);
   }
 
-  getLogs() {
+  /*getLogs() {
     return new Observable(observer => {
       observer.next(this.logs);
     })
+  }*/
+  getLogs(): Observable<string[]> {
+    return of(this.logs);
   }
 
 }

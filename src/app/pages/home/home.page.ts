@@ -10,22 +10,29 @@ import { LoggerService } from '../../services/logger/logger.service';
 })
 export class HomePage implements OnInit {
 
-  logs: Array<string> = [];
+  //logs: Array<string> = [];
+  logs: string[] = [];
 
   constructor(public alertCtrl: AlertController, public logger: LoggerService) { }
 
   ngOnInit() {
-    this.logger.addLog('Home Page is created.');
+    this.logger.addLog('Home Page is instantiated.');
 
     this.getLogs();
   }
 
-  getLogs() {
+  /*getLogs() {
     this.logger.getLogs().subscribe({
       next: (data: Array<string>) => {
         this.logs = data.slice(0);
         this.logs = this.logs.reverse();
       }
+    });
+  }*/
+  getLogs() {
+    this.logger.getLogs().subscribe(data => {
+      this.logs = data.slice(0);
+      this.logs = this.logs.reverse();
     });
   }
 

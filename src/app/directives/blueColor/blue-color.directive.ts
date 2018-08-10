@@ -12,7 +12,7 @@ export class BlueColorDirective implements OnInit {
   }
 
   ngOnInit() {
-    this.renderer.setElementStyle(this.nativeElement, 'background-color', 'yellow');
+    this.renderer.setElementStyle(this.nativeElement, 'background-color', 'cyan');
     this.renderer.setElementStyle(this.nativeElement, 'color', 'blue');
   }
 
