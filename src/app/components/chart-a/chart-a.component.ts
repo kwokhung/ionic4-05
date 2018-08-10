@@ -1,4 +1,5 @@
 import { Component, ElementRef, Renderer, OnInit, HostListener } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 import * as ECharts from 'echarts';
 
@@ -13,7 +14,7 @@ export class ChartAComponent implements OnInit {
   chartA: ECharts.ECharts;
   optionA: ECharts.EChartOption;
 
-  constructor(private element: ElementRef, private renderer: Renderer) {
+  constructor(private platform: Platform, private element: ElementRef, private renderer: Renderer) {
     this.nativeElement = this.element.nativeElement;
   }
 
@@ -90,9 +91,10 @@ export class ChartAComponent implements OnInit {
 
     if (this.nativeElement.offsetParent) {
       width = this.nativeElement.offsetParent.scrollWidth - this.nativeElement.offsetLeft * 2;
+      width = (width > 0 ? width : this.nativeElement.offsetParent.scrollWidth - 32);
     }
 
-    width = (width > 0 ? width : 400);
+    width = (width > 0 ? width : this.platform.width() - 32);
 
     this.renderer.setElementStyle(this.nativeElement, 'width', width + 'px');
     this.renderer.setElementStyle(this.nativeElement, 'height', width * 3 / 4 + 'px');
