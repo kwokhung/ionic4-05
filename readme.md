@@ -59,3 +59,10 @@ or
 ionic cordova platform add android
 ionic cordova run android
 ionic cordova run android --list
+
+or
+
+ionic cordova platform add browser
+ionic cordova build browser --prod
+ionic cordova run browser
+ionic cordova resources browser
